@@ -1,0 +1,52 @@
+﻿@model Candidate
+
+<div class="display-6">
+    Apply
+</div>
+<form method="post" asp-action="Apply">
+    <div class="text-danger" asp-validation-summary="All"></div>  @* mesajları gösteriyor *@
+
+    <div class="form-group my-2">
+        <label asp-for="Email"></label>
+        <input name="Email" class="form-control" />
+    </div>
+    <div class="form-group my-2">
+        <label asp-for="FirtName"></label>
+        <input name="FirtName" class="form-control" />
+    </div>
+    <div class="form-group my-2">
+        <label asp-for="LastName"></label>
+        <input name="LastName" class="form-control" />
+    </div>
+    <div class="form-group my-2">
+        <label asp-for="Age"></label>
+        <select name="Age" class="form-control">
+            <option value="18">18</option>
+            <option value="19">19</option>
+            <option value="20">20</option>
+            <option value="21">21</option>
+            <option value="22">22</option>
+        </select>
+    </div>
+
+    <fieldset>
+        <legend>Bir Kurs Secin</legend>
+        <p>
+            <input id="mvc" type="radio" asp-for="SelectedCourse" value="Asp.Net Core MVC" checked />
+            <Label>Asp.Net Core MVC</Label>
+        </p>
+        <p>
+            <input id="api" type="radio" asp-for="SelectedCourse " value="Asp.Net Core API" />
+            <Label>Asp.Net Core API</Label>
+        </p>
+        <p>
+            <input id="blazor" type="radio" asp-for="SelectedCourse " value="Balzor" />
+            <Label>Blazor</Label>
+        </p>
+
+    </fieldset>
+    <div>
+        <button class="btn btn-primary" type="submit">Apply</button>
+        <a class="btn btn-warning" asp-action="Index" asp-controller="Home" type="submit">Home</a>
+    </div>
+</form>
